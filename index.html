@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розыгрыш GTA 6 - Участвуй и выигрывай!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Фон на весь экран -->
+    <div class="background-image"></div>
+    
+    <!-- Заголовок и таймер вверху слева -->
+    <div class="timer-section">
+        <h1>Розыгрыш GTA 6</h1>
+        <h2>До розыгрыша</h2>
+        <div class="timer">
+            <div class="timer-block">
+                <span id="days" class="timer-value">00</span>
+                <span class="timer-label">Дней</span>
+            </div>
+            <div class="timer-block">
+                <span id="hours" class="timer-value">00</span>
+                <span class="timer-label">Часов</span>
+            </div>
+            <div class="timer-block">
+                <span id="minutes" class="timer-value">00</span>
+                <span class="timer-label">Минут</span>
+            </div>
+            <div class="timer-block">
+                <span id="seconds" class="timer-value">00</span>
+                <span class="timer-label">Секунд</span>
+            </div>
+        </div>
+        <p class="timer-subtitle">Успей принять участие!</p>
+    </div>
+    
+    <!-- Счётчик участников вверху справа -->
+    <div class="participants-header">
+        <span class="participants-label">Участников:</span>
+        <span class="participants-count" id="participantsCount">150</span>
+    </div>
+    
+    <!-- Кнопка по центру -->
+    <div class="main-section">
+        <div class="floating-text">Участие 10 ₽</div>
+        <a href="https://boomai.ru/pay9?ref=RB2UJSNW" target="_blank" class="participate-btn">Участвовать</a>
+        
+        <!-- Ссылки на документы -->
+        <div class="footer-links">
+            <a href="support.html" target="_blank">Поддержка</a>
+            <span class="separator">•</span>
+            <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
+            <span class="separator">•</span>
+            <a href="terms.html" target="_blank">Пользовательское соглашение</a>
+        </div>
+    </div>
+    
+    <!-- Почты летят горизонтально внизу -->
+    <div class="emails-ticker">
+        <div class="emails-track" id="emailsTrack"></div>
+    </div>
+
+    <!-- Модальное окно для участия -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Принять участие в розыгрыше</h2>
+            <form id="participateForm">
+                <input type="email" id="emailInput" placeholder="Введите ваш email" required>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Уведомление о Cookies -->
+    <div id="cookieNotice" class="cookie-notice">
+        <div class="cookie-content">
+            <p class="cookie-text">🍪 Мы используем cookies для улучшения работы сайта и проведения розыгрыша. Продолжая использовать сайт, вы соглашаетесь с нашей <a href="privacy.html" target="_blank">Политикой конфиденциальности</a>.</p>
+            <button id="acceptCookies" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
