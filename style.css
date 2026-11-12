@@ -133,15 +133,60 @@ body {
     letter-spacing: 2px;
     text-decoration: none;
     display: inline-block;
+    position: relative;
+    animation: breathe 2s ease-in-out infinite, pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 8px 30px rgba(238, 90, 111, 0.6), 0 0 0 0 rgba(238, 90, 111, 0.7);
+    }
+    50% {
+        box-shadow: 0 10px 35px rgba(238, 90, 111, 0.7), 0 0 10px 5px rgba(238, 90, 111, 0.3);
+    }
+}
+
+.participate-btn::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f, #ff6b6b);
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0;
+    animation: borderPulse 2s ease-in-out infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes borderPulse {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.4;
+    }
 }
 
 .participate-btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 40px rgba(238, 90, 111, 0.8);
+    transform: scale(1.08);
+    box-shadow: 0 15px 50px rgba(238, 90, 111, 0.9);
+    animation: none;
 }
 
 .participate-btn:active {
-    transform: translateY(-2px) scale(1.02);
+    transform: scale(1.03);
 }
 
 /* Ссылки под кнопкой */
@@ -419,10 +464,13 @@ body {
 @media (max-width: 968px) {
     .timer-section {
         padding: 20px;
-        top: 20px;
-        left: 20px;
+        top: 50%;
+        bottom: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
         right: auto;
         max-width: calc(100% - 40px);
+        width: auto;
     }
     
     .timer-section h1 {
@@ -458,12 +506,33 @@ body {
     }
     
     .main-section {
-        top: 65%;
+        top: auto;
+        bottom: 120px;
+        transform: translateX(-50%);
     }
     
     .floating-text {
         font-size: 18px;
         margin-bottom: 20px;
+        animation: floatAroundMobile 6s ease-in-out infinite, gradientShift 3s ease infinite;
+    }
+    
+    @keyframes floatAroundMobile {
+        0% {
+            transform: translate(0, 0);
+        }
+        25% {
+            transform: translate(10px, -5px);
+        }
+        50% {
+            transform: translate(-8px, -8px);
+        }
+        75% {
+            transform: translate(-10px, 5px);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
     }
     
     .participate-btn {
@@ -511,8 +580,10 @@ body {
 @media (max-width: 600px) {
     .timer-section {
         padding: 15px;
-        top: 15px;
-        left: 15px;
+        top: 50%;
+        bottom: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
         max-width: calc(100% - 30px);
     }
     
@@ -550,12 +621,33 @@ body {
     }
     
     .main-section {
-        top: 60%;
+        top: auto;
+        bottom: 100px;
+        transform: translateX(-50%);
     }
     
     .floating-text {
         font-size: 16px;
         margin-bottom: 15px;
+        animation: floatAroundSmall 6s ease-in-out infinite, gradientShift 3s ease infinite;
+    }
+    
+    @keyframes floatAroundSmall {
+        0% {
+            transform: translate(0, 0);
+        }
+        25% {
+            transform: translate(8px, -3px);
+        }
+        50% {
+            transform: translate(-6px, -5px);
+        }
+        75% {
+            transform: translate(-8px, 3px);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
     }
     
     .participate-btn {
@@ -605,8 +697,10 @@ body {
 @media (max-width: 400px) {
     .timer-section {
         padding: 12px;
-        top: 10px;
-        left: 10px;
+        top: 45%;
+        bottom: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
         max-width: calc(100% - 20px);
     }
     
@@ -642,12 +736,33 @@ body {
     }
     
     .main-section {
-        top: 55%;
+        top: auto;
+        bottom: 80px;
+        transform: translateX(-50%);
     }
     
     .floating-text {
         font-size: 14px;
         margin-bottom: 12px;
+        animation: floatAroundTiny 6s ease-in-out infinite, gradientShift 3s ease infinite;
+    }
+    
+    @keyframes floatAroundTiny {
+        0% {
+            transform: translate(0, 0);
+        }
+        25% {
+            transform: translate(5px, -2px);
+        }
+        50% {
+            transform: translate(-4px, -3px);
+        }
+        75% {
+            transform: translate(-5px, 2px);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
     }
     
     .participate-btn {
