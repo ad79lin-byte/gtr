@@ -20,6 +20,10 @@
     {
       "src": "*.png",
       "use": "@vercel/static"
+    },
+    {
+      "src": "2934-gta-vi.png",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
